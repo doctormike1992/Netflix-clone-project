@@ -1,0 +1,69 @@
+footer{
+  margin-top: clamp(1rem, 5vw, 20rem);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: .5rem;
+}
+
+.service{
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+  list-style: none;
+  padding: 0;
+}
+.service li{
+  margin: 0;
+  margin-bottom: 1.2rem;
+  margin-right: 1.9rem;
+  padding: 0;
+
+  color: grey;
+  font-size: .8rem;
+  cursor: pointer;
+}
+.service li:hover{
+  text-decoration: underline;
+}
+.inc{
+  color: gray;
+  width: 100%;
+  padding: 0;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+.social{
+  width: 100%;
+  color: white;
+  font-size: 1.5rem;
+}
+.social i{
+  padding-right: 1.4rem;
+  cursor: pointer;
+}
+.service-code{
+  margin: 0;
+}
+.service-code button{
+  border: 1px solid rgb(207, 206, 206);
+  background-color: transparent;
+  color: rgb(207, 206, 206);
+  padding: 0.5rem;
+}
+.service-code button:hover{
+  color: white;
+}
+@media (max-width: 890px) {
+  .service{
+ grid-template-columns: repeat(3, 1fr);
+
+  }
+}
+@media (max-width: 450px) {
+  .service{
+ grid-template-columns: repeat(2, 1fr);
+
+  }
+}

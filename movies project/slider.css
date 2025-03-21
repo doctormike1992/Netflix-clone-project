@@ -1,0 +1,393 @@
+/* SLIDER */
+
+#carusel {
+  margin-top: 2%;
+  padding-left: clamp(2px, 5vw, 60px);
+  position: relative;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+#root {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  transition: all 1s ease;
+  z-index: 99;
+}
+.title-progress {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.progress {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 0.3rem;
+  padding-right: 1%;
+}
+.progress-span {
+  background-color: gray;
+  width: clamp(0.5rem, 1vw, 1rem);
+  height: 0.1rem;
+}
+.active {
+  background-color: white;
+}
+.topSlider {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(0.2rem, 3vw, 0.4rem);
+  position: relative;
+}
+
+.explore-arrow {
+  font-size: clamp(0.3rem, 1.5vw, 1.6rem);
+  color: rgb(3, 209, 209);
+  transition: all 0.4s ease-in-out;
+  transform: translateX(clamp(-2000%, 1vw, -800%));
+  opacity: 0;
+}
+.explore {
+  font-size: clamp(0.3rem, 1.5vw, 1.4rem);
+  margin: 0;
+  color: rgb(3, 209, 209);
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  transform: translateX(-0.4rem);
+}
+
+.container:hover .explore-arrow {
+  opacity: 1;
+}
+.topSlider:hover .explore {
+  transform: translateX(0);
+  opacity: 1;
+}
+.topSlider:hover .explore-arrow {
+  transform: translateX(0) scale(0.7);
+}
+/* */
+.poster {
+  width: clamp(150px, 30vw, 391px);
+  height: clamp(120px, 30vw, 230px);
+  border-radius: 5px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.movieDiv {
+  border-radius: 15px;
+  padding: 0 0.2vw;
+  position: relative;
+}
+
+.slider-info {
+  border-radius: 15px;
+  box-sizing: border-box;
+  border: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  color: white;
+  transition: all 0.3s ease-in-out 0.3s;
+  transform-origin: bottom;
+  flex-direction: column;
+  display: flex;
+  z-index: 998;
+  height: clamp(15rem, 30vw, 28rem);
+  box-shadow: 3px 3px 10px black;
+}
+.movieDiv:hover .slider-info {
+  transform: scale(1.2) translateY(-10%);
+  visibility: visible;
+  z-index: 999;
+  left: -4%;
+  right: -4%;
+}
+.movieDiv:not(:hover) .slider-info {
+  transition-delay: 0s;
+}
+.movieDiv-img {
+  height: 60%;
+  border-radius: 10px 10px 0px 0px;
+}
+.movieDiv-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px 10px 0px 0px;
+}
+.movieDiv-info {
+  height: 40%;
+  background-color: hwb(0 12% 95%);
+  border-radius: 0px 0px 10px 10px;
+  z-index: 999;
+}
+.info-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5%;
+  object-position: center;
+}
+
+.info-buttons button {
+  color: white;
+  background-color: hwb(0 18% 81%);
+  font-size: clamp(0.4rem, 1.5vw, 1rem);
+  padding: clamp(0.4rem, 1.5vw, 0.9rem);
+  margin-right: 0.3rem;
+  border-radius: 50%;
+  border: 1px solid rgb(226, 226, 226);
+  cursor: pointer;
+}
+.info-buttons button:hover {
+  background-color: hwb(0 28% 81%);
+  border-color: white;
+}
+.info-buttons button i {
+  width: clamp(0.4rem, 10vw, 1rem);
+}
+.play-btn {
+  color: black !important;
+  background-color: white !important;
+}
+.play-btn:hover {
+  background-color: rgb(228, 228, 228) !important;
+}
+.cross-btn {
+  position: relative;
+}
+.cross-btn:hover .addList {
+  visibility: visible;
+}
+.addList {
+  visibility: hidden;
+  position: absolute;
+  bottom: 120%;
+  left: -100%;
+  text-wrap: nowrap;
+  padding: 20%;
+  border-radius: 10px;
+  font-weight: bold;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.863);
+  font-size: clamp(0.7rem, 1vw, 1.2rem);
+}
+.seeMoreDiv {
+  position: relative;
+}
+.seeMoreSpan {
+  visibility: hidden;
+  position: absolute;
+  bottom: 120%;
+  left: -70%;
+  text-wrap: nowrap;
+  padding: 20%;
+  border-radius: 10px;
+  font-weight: bold;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.863);
+  font-size: clamp(0.7rem, 1vw, 1.2rem);
+}
+.seeMoreDiv:hover .seeMoreSpan {
+  visibility: visible;
+}
+.likeDiv {
+  position: relative;
+}
+.hiddenLikeDiv {
+  position: absolute;
+  top: -12%;
+  bottom: 0;
+  left: -130%;
+  background-color: white;
+  display: none;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  background-color: #141414;
+  border-radius: 25px;
+  padding: clamp(0.4rem, 10vw, 1.9rem) clamp(0.2rem, 10vw, 1rem);
+  z-index: 10;
+}
+.hiddenLikeDiv button {
+  border: 1px solid transparent;
+  background-color: transparent;
+  font-size: clamp(0.3rem, 3vw, 1rem);
+}
+.hiddenLikeDiv button i {
+  width: clamp(0.4rem, 3vw, 1rem);
+}
+.dislikeDiv,
+.hiddenLikeDivOne,
+.loveDiv {
+  position: relative;
+}
+.dislikeDiv:hover .dislike-btn {
+  visibility: visible;
+}
+.hiddenLikeDivOne:hover .hiddenLike-btn {
+  visibility: visible;
+}
+.loveDiv:hover .love-btn {
+  visibility: visible;
+}
+.dislikeDiv span,
+.hiddenLikeDivOne span,
+.loveDiv span {
+  visibility: hidden;
+  position: absolute;
+  bottom: 120%;
+  left: -55%;
+  text-wrap: nowrap;
+  padding: 20%;
+  border-radius: 10px;
+  font-weight: bold;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.863);
+  font-size: clamp(0.7rem, 1vw, 1.2rem);
+}
+
+.likeDiv:hover .hiddenLikeDiv {
+  display: flex;
+}
+
+.likeDiv:hover .hiddenLikeDiv button {
+  border-color: transparent;
+}
+
+.buttonsRow {
+  display: flex;
+  flex-direction: row;
+}
+.runtimeDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: clamp(0.5rem, 1vw, 1rem);
+  padding-left: 5%;
+}
+.runtimeDiv p {
+  margin: 0;
+}
+.age-info {
+  border: 1px solid rgb(165, 164, 164);
+  color: rgb(165, 164, 164);
+  padding: 0.1rem 0.4rem;
+  font-size: clamp(0.6rem, 1vw, 0.9rem);
+}
+.min {
+  color: rgb(165, 164, 164);
+}
+.hd {
+  border: 1px solid rgb(165, 164, 164);
+  color: rgb(207, 206, 206);
+  font-size: clamp(0.4rem, 1vw, 0.7rem);
+  padding: 0.1rem 0.4rem;
+}
+.genreDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: clamp(0.5rem, 1vw, 1rem);
+  padding-left: 5%;
+}
+.genreDiv p {
+  margin: 0;
+  padding-top: 3%;
+  font-size: clamp(0.3rem, 3vw, 1rem);
+}
+.dot {
+  font-size: 2rem;
+  color: rgb(97, 94, 94);
+  padding-top: 3%;
+}
+/* */
+.slider {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: start;
+  align-items: start;
+}
+.container h5 {
+  font-size: clamp(0.5rem, 2.5vw, 2.2rem);
+  margin: 1rem;
+  color: #e5e5e5;
+}
+.move {
+  color: white;
+  font-size: 2rem;
+  width: clamp(10px, 10vw, 60px);
+   height: clamp(127px, 40vw, 237px);
+  background-color: #14141480;
+  border: none;
+  opacity: 0;
+  z-index: 909;
+  transition: all 0.1s ease-in;
+}
+
+.slider:hover .move {
+  opacity: 1;
+}
+.left:hover {
+  opacity: 1;
+  font-size: 2.5rem;
+  background-color: #14141496;
+}
+.left:active {
+  border-radius: 0;
+}
+.right:active {
+  border-radius: 0;
+}
+.right:hover {
+  opacity: 1;
+  font-size: 2.5rem;
+  background-color: #14141496;
+}
+
+.left {
+  position: absolute;
+  left: 0;
+  border-radius: 0px 5px 5px 0px;
+}
+.right {
+  position: absolute;
+  right: 0;
+  border-radius: 5px 0px 0px 5px;
+}
+@media (max-width: 1050px) {
+  .movieDiv:hover .slider-info {
+    transform: scale(1.2) translateY(0);
+    left: -7%;
+    right: -7%;
+  }
+  .info-buttons {
+    padding: 1%;
+  }
+}

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movies Project</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="slider.css" />
+    <link rel="stylesheet" href="slider2.css" />
+    <link rel="stylesheet" href="slider3.css" />
+    <link rel="stylesheet" href="slider4.css" />
+    <link rel="stylesheet" href="footer.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <img class="logo" src="images/Logonetflix.png" alt="NETFLIX LOGO" />
+        <div class="browseDiv">
+          <div class="headerBtn">
+            <button>Home</button>
+            <button>Movies</button>
+            <button>New & Popular</button>
+            <button>My List</button>
+            <button>Browse by Languages</button>
+          </div>
+          <div class="browse1">
+            <button class="browse">
+              Browse <i class="fa-solid fa-sort-down userArrow"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <nav class="nav-right">
+        <div id="hidden-input">
+          <button class="glass">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <input
+            class="search"
+            type="text"
+            autofocus
+            placeholder="Title,people,genres"
+          />
+          <button class="clearInput"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <p>Kids</p>
+        <div>
+          <span id="bell"><i class="fa-solid fa-bell"></i></span>
+          <div id="hidden-bell">
+            <div class="bellDiv">
+              <img src="images/csInapp_112x63.png" alt="" />
+              <div>
+                <p class="bellP">Netflix Lookahed</p>
+                <p class="bellP">Explore what's coming soon.</p>
+                <p class="bellDate">1 month ago</p>
+              </div>
+            </div>
+            <div class="bellDiv">
+              <img
+                src="images/AAAABTbLXXY1l-XPB01vDAbJUpXII411xE3Wxew7eJX8taLBCZElUpVO3N7jUimE5i_3XsRVwvZh6LWdSlR7SSnEXUQFvD8sgU-CHvqz3bpZkWLKWtfRWE0BcRriXhuz7CE9ZmAqg-U3j1wnP_U.jpg"
+                alt=""
+              />
+              <div>
+                <p class="bellP">Netflix Lookahed</p>
+                <p class="bellP">Explore what's coming soon.</p>
+                <p class="bellDate">1 month ago</p>
+              </div>
+            </div>
+            <div class="bellDiv">
+              <img
+                src="images/AAAABSVr4YGQ4xHwkT73JKfREcxZZYXyeN0ZP-n4laQLI2r9DJVYomxofae32cdomJqxhGCQwLUAWLU8sPmujD9mBi2uJPaxkommpSkdMzka6N_33_rirvVjC5vkpGwRlqGXmRyYB1bGeYDgQUY.jpg"
+                alt=""
+              />
+              <div>
+                <p class="bellP">Netflix Lookahed</p>
+                <p class="bellP">Explore what's coming soon.</p>
+                <p class="bellDate">1 month ago</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="user">
+          <img
+            src="images/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.jpg"
+            alt=""
+          />
+          <i class="fa-solid fa-sort-down userArrow"></i>
+
+          <div id="hidden-profile">
+            <div class="profileDiv1">
+              <div>
+                <img
+                  class="prodiv1"
+                  src="images/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.jpg"
+                  alt=""
+                />
+                <img class="prodiv1" src="images/03_Netflix_Kids.jpg" alt="" />
+                <i class="fa-solid fa-pencil prodiv1"></i>
+                <i class="fa-solid fa-face-smile prodiv1"> </i>
+                <i class="fa-solid fa-user prodiv1"></i>
+                <i class="fa-solid fa-circle-question prodiv1"></i>
+              </div>
+              <div>
+                <p>User</p>
+                <p>Kids</p>
+                <p>Manage Profiles</p>
+                <p>Transfer Profile</p>
+                <p>Account</p>
+                <p>Help Center</p>
+              </div>
+            </div>
+            <div class="profileDiv2">
+              <p>Sing out of Netflix</p>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section id="hero">
+      <video
+        autoplay
+        muted
+        class="video"
+        src="images/Plankton The Movie   Official Trailer   Netflix.mp4"
+        poster="images/plankton-poster.webp"
+      ></video>
+      <div class="overlay"></div>
+      <div id="trailer-info">
+        <div class="hero-left">
+          <img class="movie-title" src="images/plankton-title.webp" alt="" />
+          <div class="movie-info">
+            <h2>
+              <img class="topTenLogo" src="images/top10logo.jpeg" />#4 in Movies
+              Today
+            </h2>
+            <h3>
+              Plankton's tangled love story with his sentient computer wife goes
+              sideways when she takes a stand — and decides to destroy the world
+              without him.
+            </h3>
+          </div>
+          <div class="hero-btn">
+            <button class="play"><i class="fa-solid fa-play"></i> Play</button>
+            <button class="more-info">
+              <i class="fa-solid fa-circle-info"></i> More info
+            </button>
+          </div>
+        </div>
+        <div id="sound-age">
+          <button class="sound-btn">
+            <i class="fa-solid fa-volume-xmark"></i>
+          </button>
+          <button class="age">9+</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="carusel">
+      <div class="container">
+        <div class="title-progress">
+          <div class="topSlider">
+            <h5 class="slider-title">Popular Movies</h5>
+            <p class="explore">Explore all</p>
+            <i class="fa-solid fa-chevron-right explore-arrow"></i>
+          </div>
+          <div class="progress">
+            <span class="progress-span"></span>
+            <span class="progress-span"></span>
+            <span class="progress-span"></span>
+            <span class="progress-span"></span>
+          </div>
+        </div>
+
+        <div class="slider">
+          <button class="move left">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div id="root"></div>
+          <button class="move right">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="carusel2">
+      <div class="container2">
+        <div class="title-progress2">
+          <div class="topSlider2">
+            <h5 class="slider-title2">Top Rated Movies</h5>
+            <p class="explore2">Explore all</p>
+            <i class="fa-solid fa-chevron-right explore-arrow2"></i>
+          </div>
+          <div class="progress2">
+            <span class="progress-span2"></span>
+            <span class="progress-span2"></span>
+            <span class="progress-span2"></span>
+            <span class="progress-span2"></span>
+          </div>
+        </div>
+
+        <div class="slider2">
+          <button class="move2 left2">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div id="root2"></div>
+          <button class="move2 right2">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="carusel3">
+      <div class="container3">
+        <div class="title-progress3">
+          <div class="topSlider3">
+            <h5 class="slider-title3">Comedy Movies</h5>
+            <p class="explore3">Explore all</p>
+            <i class="fa-solid fa-chevron-right explore-arrow3"></i>
+          </div>
+          <div class="progress3">
+            <span class="progress-span3"></span>
+            <span class="progress-span3"></span>
+            <span class="progress-span3"></span>
+            <span class="progress-span3"></span>
+          </div>
+        </div>
+
+        <div class="slider3">
+          <button class="move3 left3">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div id="root3"></div>
+          <button class="move3 right3">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="carusel4">
+      <div class="container4">
+        <div class="title-progress4">
+          <div class="topSlider4">
+            <h5 class="slider-title4">Popular TV-Shows</h5>
+            <p class="explore4">Explore all</p>
+            <i class="fa-solid fa-chevron-right explore-arrow4"></i>
+          </div>
+          <div class="progress4">
+            <span class="progress-span4"></span>
+            <span class="progress-span4"></span>
+            <span class="progress-span4"></span>
+            <span class="progress-span4"></span>
+          </div>
+        </div>
+
+        <div class="slider4">
+          <button class="move4 left4">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div id="root4"></div>
+          <button class="move4 right4">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="social">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-youtube"></i>
+        </div>
+
+        <ul class="service">
+          <li>Audio Description</li>
+          <li>Help Center</li>
+          <li>Gift Cards</li>
+          <li>Media Center</li>
+          <li>Investor Relations</li>
+          <li>Jobs</li>
+          <li>Tearms of Use</li>
+          <li>Privacy</li>
+          <li>Legal Notices</li>
+          <li>Cookie Prefrences</li>
+          <li>Corporate Information</li>
+          <li>Contact Us</li>
+          <li>Ad Choices</li>
+        </ul>
+        <p class="service-code"><button>Service Code</button></p>
+        <div class="inc">© 1997-2025 Netflix, Inc.</div>
+      </div>
+    </footer>
+
+    <script type="module" src="movies.js"></script>
+  </body>
+</html>
