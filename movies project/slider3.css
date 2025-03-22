@@ -148,8 +148,8 @@
 .info-buttons3 button {
   color: white;
   background-color: hwb(0 18% 81%);
- font-size: clamp(0.4rem, 1.5vw, 1rem);
-  padding: clamp(0.4rem, 1.5vw, 0.9rem);
+ font-size: clamp(0.5rem, 1vw, 1rem);
+  padding: clamp(0.5rem, 1vw, 0.9rem);
   margin-right: 0.3rem;
   border-radius: 50%;
   border: 1px solid rgb(226, 226, 226);
@@ -160,7 +160,7 @@
   border-color: white;
 }
 .info-buttons3 button i {
-  width: clamp(0.4rem, 10vw, 1rem);
+  width: clamp(0.5rem, 1vw, 1rem);
 }
 .play-btn3 {
   color: black !important;
@@ -307,13 +307,13 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: clamp(0.5rem, 1vw, 1rem);
+  gap: clamp(0.2rem, 1vw, 1rem);
   padding-left: 5%;
 }
 .genreDiv3 p {
   margin: 0;
   padding-top: 3%;
-  font-size: clamp(0.3rem, 3vw, 1rem);
+  font-size: clamp(0.3rem, 2vw, 1rem);
 
 }
 .dot3 {

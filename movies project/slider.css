@@ -147,8 +147,8 @@
 .info-buttons button {
   color: white;
   background-color: hwb(0 18% 81%);
-  font-size: clamp(0.4rem, 1.5vw, 1rem);
-  padding: clamp(0.4rem, 1.5vw, 0.9rem);
+  font-size: clamp(0.5rem, 1vw, 1rem);
+  padding: clamp(0.5rem, 1vw, 0.9rem);
   margin-right: 0.3rem;
   border-radius: 50%;
   border: 1px solid rgb(226, 226, 226);
@@ -159,7 +159,7 @@
   border-color: white;
 }
 .info-buttons button i {
-  width: clamp(0.4rem, 10vw, 1rem);
+  width: clamp(0.5rem, 1vw, 1rem);
 }
 .play-btn {
   color: black !important;
@@ -305,13 +305,13 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: clamp(0.5rem, 1vw, 1rem);
+  gap: clamp(0.2rem, 1vw, 1rem);
   padding-left: 5%;
 }
 .genreDiv p {
   margin: 0;
   padding-top: 3%;
-  font-size: clamp(0.3rem, 3vw, 1rem);
+  font-size: clamp(0.3rem, 2vw, 1rem);
 }
 .dot {
   font-size: 2rem;
@@ -325,7 +325,6 @@
   width: 100%;
   justify-content: center;
   align-items: center;
- 
 }
 .container {
   display: flex;
@@ -343,7 +342,7 @@
   color: white;
   font-size: 2rem;
   width: clamp(10px, 10vw, 60px);
-   height: clamp(127px, 40vw, 237px);
+  height: clamp(127px, 40vw, 237px);
   background-color: #14141480;
   border: none;
   opacity: 0;
