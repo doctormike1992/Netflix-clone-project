@@ -235,6 +235,7 @@ function progressArrowRight() {
 if (window.innerWidth < 800) {
   left4.style = "display: none";
   right4.style = "display: none";
+  root4.style.transition = "transform 0.5s ease-in-out";
 
   let touchStartX = 0;
   let touchEndX = 0;
@@ -270,4 +271,6 @@ if (window.innerWidth < 800) {
       progressBar4();
     }
   }
+} else {
+  root4.style.transition = "...";
 }

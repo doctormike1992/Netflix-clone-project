@@ -15,7 +15,7 @@
   width: 100%;
   justify-content: flex-start;
   align-items: center;
-  transition: all 1s ease;
+  transition: all 1s ease-in-out;
   z-index: 99;
 }
 .slider::-webkit-scrollbar {
