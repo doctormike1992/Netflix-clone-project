@@ -38,6 +38,8 @@ init3();
 init4();
 progressBar();
 
+
+
 //FETCH DATA
 function getGenre() {
   fetch(genre_URL)
@@ -64,7 +66,7 @@ function getMovies(url) {
 async function run(url) {
   const response = await fetch(url);
   const data = await response.json();
-  
+
   return [data.runtime, data.backdrop_path];
 }
 //ARROW BUTTONS
@@ -95,6 +97,7 @@ function navButtons() {
       sliderTransition += 95;
     }
     root.style.transform = `translateX(-${sliderTransition}%)`;
+
     progressArrowRight();
     progressBar();
   });
@@ -126,11 +129,11 @@ function checkIfGenre(genre1, genre2, genre3, date) {
     return `<p>${genre1}</p> <span class='dot'>•</span> <p>${genre2}</p> <span class='dot'>•</span> 
     <p>${genre3}</p>`;
   } else if (genre1 && genre2 && !genre3) {
-    return `<p>${genre1}</p> <span class='dot'>•</span> <p>${genre2}</p>`
+    return `<p>${genre1}</p> <span class='dot'>•</span> <p>${genre2}</p>`;
   } else if (genre1 && !genre2 && !genre3) {
     return `<p>${genre1}</p>`;
   }
-  }
+}
 
 // RENDER MOVIES
 function showMovies(data) {
@@ -286,13 +289,12 @@ document.body.addEventListener("click", (e) => {
 function titleAnimation() {
   setTimeout(() => {
     hiddenInfo.classList.add("movie-info-hidden");
-    if (window.innerWidth < 890) { 
+    if (window.innerWidth < 890) {
       movieTitle.style = "transform: translateY(10%) translateX(-3%)";
     } else {
       movieTitle.style =
-      "transform: translateY(20rem) scale(0.8) translateX(-5rem)";
+        "transform: translateY(20rem) scale(0.8) translateX(-5rem)";
     }
-    
   }, 4000);
 }
 
@@ -368,3 +370,46 @@ function progressArrowRight() {
   }
   progress += 1;
 }
+
+//SWIPE FUNCTION
+if (window.innerWidth < 800) {
+  left.style = "display: none";
+  right.style = "display: none";
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  root.addEventListener("touchstart", (event) => {
+    touchStartX = event.touches[0].clientX;
+  });
+
+  root.addEventListener("touchend", (event) => {
+    touchEndX = event.changedTouches[0].clientX;
+    handleSwipe();
+  });
+
+  function handleSwipe() {
+    const swipeDistance = touchEndX - touchStartX;
+
+    if (swipeDistance > 50) {
+      sliderTransition -= 95;
+      root.style.transform = `translateX(-${sliderTransition}%)`;
+      progressArrowLeft();
+      progressBar();
+    } else if (swipeDistance < -50) {
+      if (goRight === 0) {
+        sliderTransition = 0;
+        goRight += 1;
+        sliderTransition += 95;
+      } else {
+        sliderTransition += 95;
+      }
+      render(infinite);
+      root.style.transform = `translateX(-${sliderTransition}%)`;
+      progressArrowRight();
+      progressBar();
+    }
+  }
+}
+
+

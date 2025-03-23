@@ -76,7 +76,6 @@ navButtons();
 async function run4(url) {
   const response = await fetch(url);
   const data = await response.json();
-  console.log(data)
   
   return [data.number_of_seasons, data.backdrop_path];
 }
@@ -230,4 +229,45 @@ function progressArrowRight() {
     return
   }
   progress4 += 1;
+}
+
+//SWIPE FUNCTIONALITY
+if (window.innerWidth < 800) {
+  left4.style = "display: none";
+  right4.style = "display: none";
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  root4.addEventListener("touchstart", (event) => {
+    touchStartX = event.touches[0].clientX;
+  });
+
+  root4.addEventListener("touchend", (event) => {
+    touchEndX = event.changedTouches[0].clientX;
+    handleSwipe();
+  });
+
+  function handleSwipe() {
+    const swipeDistance = touchEndX - touchStartX;
+
+    if (swipeDistance > 50) {
+      sliderTransition -= 95;
+      root4.style.transform = `translateX(-${sliderTransition}%)`;
+      progressArrowLeft();
+      progressBar4();
+    } else if (swipeDistance < -50) {
+      if (goRight === 0) {
+        sliderTransition = 0;
+        goRight += 1;
+        sliderTransition += 95;
+      } else {
+        sliderTransition += 95;
+      }
+      render(infinite);
+      root4.style.transform = `translateX(-${sliderTransition}%)`;
+      progressArrowRight();
+      progressBar4();
+    }
+  }
 }

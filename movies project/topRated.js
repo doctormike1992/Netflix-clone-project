@@ -225,3 +225,50 @@ function progressArrowRight() {
   }
   progress2 += 1;
 }
+
+//SWIPE FUNCTION
+if (window.innerWidth < 800) {
+  left2.style = "display: none";
+  right2.style = "display: none";
+
+  let touchStartX = 0;
+let touchEndX = 0;
+
+
+root2.addEventListener("touchstart", (event) => {
+  touchStartX = event.touches[0].clientX;
+});
+
+root2.addEventListener("touchend", (event) => {
+  touchEndX = event.changedTouches[0].clientX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const swipeDistance = touchEndX - touchStartX;
+
+  if (swipeDistance > 50) {
+    
+    sliderTransition -= 95;
+    root2.style.transform = `translateX(-${sliderTransition}%)`;
+    progressArrowLeft();
+    progressBar2();
+  } else if (swipeDistance < -50) {
+    if (goRight === 0) {
+      sliderTransition = 0;
+      goRight += 1;
+      sliderTransition += 95;
+    } else {
+      sliderTransition += 95;
+    }
+    render(infinite);
+    root2.style.transform = `translateX(-${sliderTransition}%)`;
+    progressArrowRight();
+    progressBar2();
+  }
+}
+ }
+
+
+
+

@@ -1,7 +1,7 @@
 /* SLIDER */
 #carusel3 {
   margin-top: 2%;
-  padding-left: clamp(2px, 5vw, 60px);
+  padding-left: clamp(2px, 3.5vw, 60px);
   position: relative;
   overflow-x: clip;
   overflow-y: visible;

@@ -2,11 +2,13 @@
 
 #carusel {
   margin-top: 2%;
-  padding-left: clamp(2px, 5vw, 60px);
+  padding-left: clamp(2px, 3.5vw, 60px);
   position: relative;
   overflow-x: clip;
   overflow-y: visible;
 }
+
+
 #root {
   display: flex;
   flex-direction: row;
@@ -16,6 +18,10 @@
   transition: all 1s ease;
   z-index: 99;
 }
+.slider::-webkit-scrollbar {
+  width: 0;
+}
+
 .title-progress {
   display: flex;
   flex-direction: row;
@@ -90,7 +96,7 @@
 }
 
 .slider-info {
-  border-radius: 15px;
+    border-radius: 15px;
   box-sizing: border-box;
   border: none;
   position: absolute;
@@ -101,17 +107,18 @@
   visibility: hidden;
   color: white;
   transition: all 0.3s ease-in-out 0.3s;
-  transform-origin: bottom;
+  transform-origin: 50% 50%;
   flex-direction: column;
   display: flex;
-  z-index: 998;
+  z-index: 99;
   height: clamp(15rem, 30vw, 28rem);
+  
   box-shadow: 3px 3px 10px black;
 }
 .movieDiv:hover .slider-info {
-  transform: scale(1.2) translateY(-10%);
+ transform: scale(1.2) translateY(-10%);
   visibility: visible;
-  z-index: 999;
+  z-index: 99;
   left: -4%;
   right: -4%;
 }
@@ -382,9 +389,9 @@
 }
 @media (max-width: 1050px) {
   .movieDiv:hover .slider-info {
-    transform: scale(1.2) translateY(0);
-    left: -7%;
-    right: -7%;
+    transform: scale(1.1) translateY(0);
+    left: -5%;
+    right: -5%;
   }
   .info-buttons {
     padding: 1%;
